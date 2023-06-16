@@ -1,24 +1,18 @@
 //your JS code here. If required.
 
-"lat":51.4875167,
-      "lon":-0.1687007,
+	      let btn = document.getElementById('btn');
+        let display = document.getElementById('weatherData');
 
-	let btn = document.getElementById('btn')
-let display = document.getElementById('weatherData')
+        btn.addEventListener('click', handleFetch);
 
-btn.addEventListener('click',handleFetch)
-
-function handleFetch(){
-fetch(`https://api.openweathermap.org/data/2.5/weather?
-lat={51.4875167}&lon={-0.1687007}&appid={249329AG24aqUAk3LyNQSKfu1opX4FRjxYPX9
-}`).then(res=>res.json)
-.then(data=> displayData(data.weather))
-}
-
-function displayData(arr)
-	{
-		
-		arr.map((t)=>{
-			display.innerHTML = `Current weather in London: ${t.main} `
-		})
-	}
+        function handleFetch() {
+            fetch('https://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=249329tLzXDYZxWc9U4jMUoKNdD9jS8yWUYA9')
+                .then(res => res.json())
+                .then(data => {
+                    const weatherMain = data.weather[0].main;
+                    display.innerHTML = `Current weather in London: ${weatherMain}`;
+                })
+                .catch(error => {
+                    console.log(error, 'no data');
+                });
+        }
