@@ -6,7 +6,7 @@
         btn.addEventListener('click', handleFetch);
 
         function handleFetch() {
-fetch('https://api.openweathermap.org/data/2.5/weather?lat=51.50&lon=-0.12&appid=572be912733a41a8b8309700ef2e114a')
+fetch('https://api.openweathermap.org/data/2.5/weather?lat=51.5085&lon=-0.1257&appid=572be912733a41a8b8309700ef2e114a')
                 .then(res => res.json())
                 .then(data => {
                     const weatherMain = data.weather[0].main;
