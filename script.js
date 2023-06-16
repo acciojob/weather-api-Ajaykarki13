@@ -6,7 +6,7 @@
         btn.addEventListener('click', handleFetch);
 
         function handleFetch() {
-            fetch('https://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=249329tLzXDYZxWc9U4jMUoKNdD9jS8yWUYA9')
+            fetch('https://api.openweathermap.org/data/2.5/weather?lat=51.4875167&lon=-0.1687007&appid=572be912733a41a8b8309700ef2e114a')
                 .then(res => res.json())
                 .then(data => {
                     const weatherMain = data.weather[0].main;
